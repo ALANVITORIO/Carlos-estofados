@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Estofados</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg custom-gradient">
+    <div class="container">
+      <!-- Logo ou marca -->
+      <a class="navbar-brand" href="#">
+        <img src="logo.jpg" alt="Logo" class="logo-navbar rounded-circle" style="height: 50px; width: 50px; margin-right: 10px;"> Carlos Estofados 🛋
+      </a>
+
+      <!-- Botão de toggle para dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens do menu -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Principal</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Produtos</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Serviços</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Sobre Nós</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section pt-0">
+    <div class="container">
+      <div class="row">
+        <!-- Text Column -->
+        <div class="col-lg-6">
+          <h1 class="mt-0 pt-3" id="typing-text"></h1>
+          <p>Fabricação de estofados sob medida, reformas e remodelação!</p>
+          <p>Entregamos na região de São Paulo-Capital!</p>
+          <p>Somos de Mauá-ABC!</p>
+          <!-- Botão que aparecerá apenas em telas grandes (não móveis) -->
+          <a class="btn btn-lg btn-custom d-none d-lg-inline-block" href="#" role="button">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Opções para desktop e dispositivos maiores
+      const optionsDesktop = {
+        strings: [
+          "Carlos Estofados - Fabricação de estofados sob medida, reformas e remodelação!",
+          "Carlos Estofados - Entregamos na região de São Paulo-Capital!",
+          "Carlos Estofados - Somos de Mauá-ABC!"
+        ],
+        typeSpeed: 30,
+        backSpeed: 10,
+        loop: true
+      };
+
+      // Opções para dispositivos móveis
+      const optionsMobile = {
+        strings: [
+          "Carlos Estofados - Fabricação de estofados sob medida, reformas e remodelação!",
+          "Carlos Estofados - Entregamos em São Paulo-Capital!",
+          "Carlos Estofados - Somos de Mauá-ABC!"
+        ],
+        typeSpeed: 0,
+        backSpeed: 0,
+        backDelay: 5000, // O tempo de espera antes de mudar a frase
+        fadeOut: true,
+        fadeOutDelay: 100,
+        showCursor: false,
+        loop: true
+      };
+
+      // Verifica se está em um dispositivo móvel
+      const mq = window.matchMedia("(max-width: 768px)");
+
+      // Função para alternar as opções do Typed.js baseado no dispositivo
+      const setTypedOptions = () => {
+        // Inicializa Typed.js com as opções corretas baseadas no dispositivo
+        const typed = new Typed('#typing-text', mq.matches ? optionsMobile : optionsDesktop);
+
+        // Event listener para mudanças na largura da tela
+        mq.addListener(e => {
+          // Destruir a instância anterior antes de iniciar uma nova
+          typed.destroy();
+          // Inicializa Typed.js com as novas opções
+          new Typed('#typing-text', e.matches ? optionsMobile : optionsDesktop);
+        });
+      };
+
+      setTypedOptions(); // Chama a função para configurar Typed.js
+    });
+  </script>
+</body>
+
+</html>

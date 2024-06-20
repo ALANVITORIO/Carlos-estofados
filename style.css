@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+body {
+  background: #485563; /* fallback para navegadores antigos */
+  background: -webkit-linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #29323c,
+    #485563
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.hero-section {
+  position: relative;
+  background-image: url('hero1.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 50px; /* Ajuste para subir o texto */
+}
+
+p {
+  font-family: 'PT Mono', 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra mais sutil */
+  color: #f1f1f1; /* Cor do texto mais clara */
+  margin-top: 0; /* Remover margem superior */
+}
+
+h1 {
+  font-family: 'PT Mono', 'Courier New', monospace;
+  font-weight: bolder;
+  color: #8c1228; /* Cor inicial da animação */
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #8c1228;
+  font-size: 3rem;
+  margin-top: 0; /* Remover margem superior */
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1.25rem;
+    color: #f1f1f1;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.navbar {
+  background: linear-gradient(to right, #1c2833, #a1a5a8);
+}
+
+.btn-custom {
+  background: #8c1228;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #8c1228;
+}
+
+.btn-custom:hover {
+  background: #5246dc;
+  box-shadow: 0 0 20px #8c1228;
+}
